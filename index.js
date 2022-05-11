@@ -60,6 +60,7 @@ app.post("/payments/create", async (req, res) => {
     res.status(201).send({
       clientSecret: paymentIntent.client_secret,
     });
+    
   } else {
     res.status(400).send("An Error Occured");
   }
