@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors({ origin: process.env.CLIENT_URL })); 
 
 // API routes
-app.get("/", (req, res) => res.status(200).send("Testing..."));
+app.get("/", (req, res) => res.status(200).send("The Coffee House Server"));
 app.post("/payments/userEmail", async (req, res) => {
   const userEmail = req.query.email;
 
@@ -37,7 +37,7 @@ app.post("/payments/userEmail", async (req, res) => {
 
   mailTransporter.sendMail(mailDetails, function (err, data) {
     if (err) {
-      console.log("An Error Occured: ", err);
+      console.log("Email Not Sent! Error: ", err);
     } else {
       console.log("Email sent successfully.");
     }
@@ -60,10 +60,11 @@ app.post("/payments/create", async (req, res) => {
     res.status(201).send({
       clientSecret: paymentIntent.client_secret,
     });
-    
+
   } else {
     res.status(400).send("An Error Occured");
   }
 });
 
-app.listen(port, console.log(`listening on port ${port}...`));
+// app.listen(port, console.log(`listening on port ${port}...`));
+app.listen(port,  (req, res) => res.status(200).send(`listening on port ${port}...`));
