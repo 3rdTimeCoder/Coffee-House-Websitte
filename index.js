@@ -67,4 +67,7 @@ app.post("/payments/create", async (req, res) => {
 });
 
 // app.listen(port, console.log(`listening on port ${port}...`));
-app.listen(port,  alert(`listening on port ${port}...`));
+app.listen(port, err => {
+  if(err) throw err;
+  console.log("%c Server running", "color: green",`listening on port ${port}...`);
+});
