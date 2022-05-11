@@ -67,4 +67,4 @@ app.post("/payments/create", async (req, res) => {
 });
 
 // app.listen(port, console.log(`listening on port ${port}...`));
-app.listen(port,  (req, res) => res.status(200).send(`listening on port ${port}...`));
+app.listen(port,  alert(`listening on port ${port}...`));
