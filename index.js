@@ -14,6 +14,10 @@ app.use(express.json());
 // app.use(cors({ origin: "http://localhost:3000" })); 
 // //remember to change this with where frontend is hosted
 app.use(cors({ origin: process.env.CLIENT_URL })); 
+(async ()=>{
+  console.log("Hellow, Authentication");
+  
+})()
 
 // API routes
 app.get("/", (req, res) => res.status(200).send("The Coffee House Server"));
