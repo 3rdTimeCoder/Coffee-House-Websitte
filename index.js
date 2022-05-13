@@ -21,15 +21,15 @@ app.post("/payments/userEmail", async (req, res) => {
   const userEmail = req.query.email;
 
   let mailTransporter = nodemailer.createTransport({
-    service: "gmail",
+    service: "outlook",
     auth: {
-      user: "3rdtimecoder@gmail.com",
+      user: process.env.AUTH_EMAIL,
       pass: process.env.EMAIL_PASSWORD,
     },
   });
 
   let mailDetails = {
-    from: "3rdtimecoder@gmail.com",
+    from: process.env.AUTH_EMAIL,
     to: userEmail,
     subject: "The Coffee House: Your Order",
     html: "<h4>Greetngs Dear Customer,</h4><p>This is an email to confirm your order with us at The Coffee House. Your order_id is w9z_093js4_TCH and your tracking number is 4356. Your order will be delivered within 5 business days, if not contact: +(27) 13 213 4567.</p><p>For more details see the statement attcahed.</p><h4>Kind Regards,<h4>The Coffee House</h3>",
