@@ -17,6 +17,9 @@
     "pusher": "^5.0.0",
     "stripe": "^8.195.0"
   },
+  "engines":{
+    "node" : "16.15.0"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
