@@ -21,7 +21,7 @@ app.post("/payments/userEmail", async (req, res) => {
   const userEmail = req.query.email;
 
   let mailTransporter = nodemailer.createTransport({
-    service: "outlook",
+    service: "hotmail",
     auth: {
       user: process.env.AUTH_EMAIL,
       pass: process.env.EMAIL_PASSWORD,
